@@ -5,7 +5,28 @@
     <title>Title</title>
 </head>
 <body>
+<script type="text/javascript">
+function getDate()
+{
+    var days = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var d = new Date();
+    var n = d.getDay();
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
 
+    if(seconds < 10)
+    {
+        seconds = '0' + seconds;
+    }
+    document.getElementById('daydisplay').innerHTML = 'Today is:' + days[n];
+    document.getElementById('timedisplay').innerHTML = 'Current time is:' + hours + ':' + minutes + ':' + seconds;
+}
+setTimeout(getDate, 0);
+</script>
+<div id="daydisplay"></div>
+<div id="timedisplay"></div>
 </body>
 <script src="index.js"></script>
 </html>
